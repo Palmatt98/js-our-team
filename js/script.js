@@ -14,7 +14,7 @@
 // MILESTONE :zero::
 // Creare l’array di oggetti con le informazioni fornite.
 
-const team = [
+const teamMembers = [
 	{
 		name: "Wayne Barnett",
 		role: "Founder & CEO",
@@ -47,7 +47,20 @@ const team = [
 	},
 ];
 
-for (let i = 0; i < team.length; i++){
-	let curItem = team[i]
-	console.log(curItem);
+const teamElement = document.getElementById("team");
+
+for (let i = 0; i < teamMembers.length; i++) {
+	const teamMember = teamMembers[i];
+	console.log(teamMember);
+	teamElement.innerHTML += `
+				<div class="col-4 py-4">
+					<div class="card"">
+						<img src="./img/${teamMember.photo}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">${teamMember.name}</h5>
+							<p class="card-text">${teamMember.role}</p>
+							
+						</div>
+					</div>
+				</div>`;
 }
